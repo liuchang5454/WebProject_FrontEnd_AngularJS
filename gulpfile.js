@@ -42,9 +42,10 @@ gulp.task('usemin', ['jshint'], function() {
     }))
 
     .pipe(gulp.dest('dist/'));
-
+/*
     gulp.src('./app/views/*.html')
     .pipe(gulp.dest('dist/views/'));
+*/
 });
 
 // Images
