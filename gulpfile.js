@@ -12,10 +12,9 @@ var gulp = require('gulp'),
     changed = require('gulp-changed'),
     rev = require('gulp-rev'),
     browserSync = require('browser-sync'),
-    del = require('del')
+    del = require('del'),
+    ngannotate = require('gulp-ng-annotate')
 ;
-
-var ngannotate = require('gulp-ng-annotate');
 
 gulp.task('jshint', function() {
   return gulp.src('app/scripts/**/*.js')
@@ -33,14 +32,19 @@ gulp.task('default', ['clean'], function() {
     gulp.start('usemin', 'imagemin','copyfonts');
 });
 
-gulp.task('usemin',['jshint'], function () {
-  return gulp.src('./app/menu.html')
+
+// Usemin task
+gulp.task('usemin', ['jshint'], function() {
+  return gulp.src('./app/**/*.html')
     .pipe(usemin({
-      css:[minifycss(),rev()],
-      js: [ngannotate(),uglify(),rev()]
+      css : [minifycss(), rev()],
+      js : [ngannotate(), uglify(), rev()]  
     }))
-    
+
     .pipe(gulp.dest('dist/'));
+
+    gulp.src('./app/views/*.html')
+    .pipe(gulp.dest('dist/views/'));
 });
 
 // Images
@@ -79,7 +83,7 @@ gulp.task('browser-sync', ['default'], function () {
    browserSync.init(files, {
       server: {
          baseDir: "dist",
-         index: "menu.html"
+         index: "index.html"
       }
    });
         // Watch any files in dist/, reload on change
