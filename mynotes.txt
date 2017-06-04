@@ -1,12 +1,52 @@
-Gulp is an automation tool for web dev. It minify the css and js files, give you warning / errors for the js compilation, watch the changes in the code and sync the browser, etc. A dist directory will be created and contains everything you need to deploy to server.
 
 Once you are ready to build, go to the confusion directory
 - gulp watch
 	//or just run gulp, if you do not want to watch the code change and sync the browser
+	//if it is just in dev mode, it is not necessary to run gulp watch or gulp. just copy the contents in app folder to json-server/public folder? NO!! I tested, i had to copy contents from dist folder instead of app folder. No!! it turns out i don't have the copy the contents from dist into jason server
 
 My json-server directory is at the same level as app directory, the same as dist directory. Once the gulp watch is running:
 - copy all the contents in dist directory to json-server/public folder
+	//this is NOT necessary. when running gulp watch, it will start its own server at http://localhost:3001/. we just need to host the json data in this json-server, we don't have put host the SPA in json-server.
 - json-server --watch db.json
 	//this will start the json server, the js files in public directory will fetch data from the server
 - http://localhost:3000
-	//type this in browser, to access the contents
+	//type this in browser, to access the index page in public folder
+
+angular testing:
+- go to the confusion/test folder
+- karma start karma.conf.js
+	//in shell, the results will show up as X failed, Y success. also a chrome page will be opened showing some idles
+
+
+
+/*********************
+*Some angualrjs modules:
+*
+*ui route: SPA routing framework on client side. ui.router
+*
+*ngResource: this module provides a higher level abstraction than $http,  interacts with RESTful server side data. $resource.
+*********************/	
+
+
+/*********************
+*Some terms:
+*
+*AngularJS: AngularJS is a JavaScript framework. It is a library written in JavaScript. AngularJS is distributed as a JavaScript file, and can be added to a web page with a script tag. Some additional AngualarJS modules are not added into the core code, thus needs to be added separately as a script tag in the html page. Such as angular-ui-router and angular-resource.
+*
+*Node.js: Node.js is a server framework built on Chrome's JS engine, it allows you to run the JS on the server. 
+*********************/
+
+/*********************
+*Some tools:
+*
+*Gulp: Gulp is an automation tool for web dev. It minify the css and js files, give you warning / errors for the potential js problems, watch the changes in the code and sync the browser, etc. A dist directory will be created and contains everything you need to deploy to server.
+*
+*********************/
+
+/*********************
+*Angular testing:
+*
+*Unit testing: Angular mock + Karma + Jasmine. seems complex, it is not helping at this stage. it only adds up complexity before i understand the other proceses. it ran successfully, with 5 success and 3 failed. 
+*
+*End-to-End testing: Protractor. i was not able to make it run. 
+*********************/
