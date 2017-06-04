@@ -1,0 +1,12 @@
+Gulp is an automation tool for web dev. It minify the css and js files, give you warning / errors for the js compilation, watch the changes in the code and sync the browser, etc. A dist directory will be created and contains everything you need to deploy to server.
+
+Once you are ready to build, go to the confusion directory
+- gulp watch
+	//or just run gulp, if you do not want to watch the code change and sync the browser
+
+My json-server directory is at the same level as app directory, the same as dist directory. Once the gulp watch is running:
+- copy all the contents in dist directory to json-server/public folder
+- json-server --watch db.json
+	//this will start the json server, the js files in public directory will fetch data from the server
+- http://localhost:3000
+	//type this in browser, to access the contents
