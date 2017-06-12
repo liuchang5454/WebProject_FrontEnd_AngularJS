@@ -44,6 +44,12 @@
           "comment": "this is terrible! bad taste and bad service",
           "author": "Chang Liu",
           "date": "2017-06-04T03:37:42.068Z"
+        },
+        {
+          "rating": "4",
+          "comment": "that's okay, i don't like idian food, but this is good enough to me.",
+          "author": "Yi Xu",
+          "date": "2017-06-12T02:44:32.471Z"
         }
       ]
     },
@@ -215,5 +221,45 @@
       "description": "Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. He says, Put together the cuisines from the two craziest cultures, and you get a winning hit! Amma Mia!"
     }
   ],
-  "feedback": []
+  "feedback": [
+    {
+      "mychannel": "Email",
+      "firstName": "Chang",
+      "lastName": "Liu",
+      "agree": true,
+      "email": "liuchang5454@gmail.com",
+      "tel": {
+        "areaCode": "406",
+        "number": "2236328"
+      },
+      "comments": "i would like to be your vegetable suppler, please contact me.",
+      "id": 1
+    },
+    {
+      "mychannel": "tel",
+      "firstName": "Yi",
+      "lastName": "Xu",
+      "agree": true,
+      "email": "liuchang5454@gmail.com",
+      "tel": {
+        "areaCode": "406",
+        "number": "2236328"
+      },
+      "comments": "very good food",
+      "id": 2
+    },
+    {
+      "mychannel": "",
+      "firstName": "Jack",
+      "lastName": "Ma",
+      "agree": false,
+      "email": "jm@eg.com",
+      "tel": {
+        "areaCode": "406",
+        "number": "2321212"
+      },
+      "comments": "test with feedback realtime display, see if it disappear after submit",
+      "id": 3
+    }
+  ]
 }
